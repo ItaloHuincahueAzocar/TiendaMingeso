@@ -1,6 +1,9 @@
 package com.Italo.TiendaMingeso.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +21,11 @@ public class ProductController {
     @PostMapping("/add")
     public String addString(@RequestBody Product product) {
         productService.saveProduct(product);
-        return "Nuevo producto añadido";
+        return "Nuevo producto añadido: " + product.getName();
+    }
+
+    @GetMapping("/getAll")
+    public List<Product> getAllProducts(){
+        return productService.getAllProducts();
     }
 }
