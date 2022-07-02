@@ -2,15 +2,18 @@ package com.Italo.TiendaMingeso.service;
 
 import java.util.List;
 
-import com.Italo.TiendaMingeso.model.Product;
+import com.Italo.TiendaMingeso.model.Producto;
 
 
 
 public interface ProductService {
     
-    public Product saveProduct(Product product);
+    public Producto saveProduct(Producto product);
 
-    public List<Product> getAllProducts ();
-    
+    public List<Producto> getAllProducts();
+
+    public List<Producto> Producto();
+
+    public List<Producto> CalcularNuevosPrecios();
 
 }

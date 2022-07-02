@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Italo.TiendaMingeso.model.Product;
+import com.Italo.TiendaMingeso.model.Producto;
 import com.Italo.TiendaMingeso.service.ProductService;
 
 @RestController
@@ -19,13 +19,24 @@ public class ProductController {
     private ProductService productService;
 
     @PostMapping("/add")
-    public String addString(@RequestBody Product product) {
+    public String addString(@RequestBody Producto product) {
         productService.saveProduct(product);
-        return "Nuevo producto añadido: " + product.getName();
+        return "Nuevo producto añadido: " + product.getNombre();
     }
 
     @GetMapping("/getAll")
-    public List<Product> getAllProducts(){
+    public List<Producto> getAllProducts(){
         return productService.getAllProducts();
     }
+
+    @GetMapping("/producto")
+    public List<Producto> Producto(){
+        return productService.Producto();
+    }
+    
+    @GetMapping("/CalcularNuevosPrecios")
+    public List<Producto> CalcularNuevosPrecios(){
+        return productService.CalcularNuevosPrecios();
+    }
+
 }
