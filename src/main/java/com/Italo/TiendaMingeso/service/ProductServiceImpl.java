@@ -1,5 +1,6 @@
 package com.Italo.TiendaMingeso.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,25 +22,22 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public List<Producto> getAllProducts() {
-        return productRepository.findAll();
-    }
-
-    @Override
     public List<Producto> Producto() {
         return productRepository.findAll();
     }
 
     @Override
-    public List<Producto> CalcularNuevosPrecios() {
-        
-        List<Producto> lista = productRepository.findAll();
+    public List<String> CalcularNuevosPrecios(double valorUF) {
+       
+        List<Producto> listaProd = this.Producto();
+        List <String> resultado = new ArrayList<String>();
 
-        for (int i = 0; i< lista.size(); i++) {
-            System.out.println(lista.get(i).getPrecioCLP());
+        for (int i = 0; i< listaProd.size(); i++) {
+            double precioUSD = (listaProd.get(i).getPrecioCLP() / valorUF);
+            String valor = Double.toString(precioUSD);
+            resultado.add(i, valor);
         }
 
-        return lista;
+        return resultado;
     }
-    
 }
