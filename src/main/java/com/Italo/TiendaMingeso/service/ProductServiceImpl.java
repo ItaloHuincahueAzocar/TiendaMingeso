@@ -27,17 +27,15 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public List<String> CalcularNuevosPrecios(double valorUF) {
+    public List<Producto> CalcularNuevosPrecios() {
        
         List<Producto> listaProd = this.Producto();
-        List <String> resultado = new ArrayList<String>();
-
+       
         for (int i = 0; i< listaProd.size(); i++) {
-            double precioUSD = (listaProd.get(i).getPrecioCLP() / valorUF);
-            String valor = Double.toString(precioUSD);
-            resultado.add(i, valor);
+            listaProd.get(i).setPrecioUSD(listaProd.get(i).getPrecioCLP() / 940.3);
+            listaProd.get(i).setPrecioEUR(listaProd.get(i).getPrecioCLP() / 987.84);
         }
 
-        return resultado;
+        return listaProd;
     }
 }

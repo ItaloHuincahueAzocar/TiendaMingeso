@@ -15,7 +15,10 @@ public class Producto {
 	private long Id;
 	private String Nombre;
 	private int PrecioCLP;
-	
+	private double PrecioUSD;
+	private double PrecioEUR;
+
+
 	public Producto(){
     }
 
@@ -43,4 +46,20 @@ public class Producto {
 		this.PrecioCLP = PrecioCLP;
 	}
 
+	public double getPrecioUSD() {
+		return this.PrecioUSD;
+	}
+
+	public void setPrecioUSD(double PrecioUSD) {
+		this.PrecioUSD = PrecioUSD;
+	}
+
+	public double getPrecioEUR() {
+		return this.PrecioEUR;
+	}
+
+	public void setPrecioEUR(double PrecioEUR) {
+		this.PrecioEUR = PrecioEUR;
+	}
+	
 }

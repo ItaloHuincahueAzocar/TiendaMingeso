@@ -12,6 +12,6 @@ public interface ProductService {
 
     public List<Producto> Producto();
 
-    public List<String> CalcularNuevosPrecios(double valorUF);
+    public List<Producto> CalcularNuevosPrecios();
 
 }

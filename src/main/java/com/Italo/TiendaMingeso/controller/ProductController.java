@@ -32,7 +32,7 @@ public class ProductController {
     }
     
     @GetMapping("/calcularNuevosPrecios")
-    public List<String> CalcularNuevosPrecios(@RequestParam double valorUF){
-        return productService.CalcularNuevosPrecios(valorUF);
+    public List<Producto> CalcularNuevosPrecios(){
+        return productService.CalcularNuevosPrecios();
     }
 }
