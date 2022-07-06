@@ -33,7 +33,7 @@ public class ProductServiceImpl implements ProductService{
        
         for (int i = 0; i< listaProd.size(); i++) {
             listaProd.get(i).setPrecioUSD(listaProd.get(i).getPrecioCLP() / 940.3);
-            listaProd.get(i).setPrecioEUR(listaProd.get(i).getPrecioCLP() / 987.84);
+            listaProd.get(i).setPrecioEUR(listaProd.get(i).getPrecioCLP() / 977.54);
         }
 
         return listaProd;
